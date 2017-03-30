@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'static_controller/home'
 
+  get 'static_controller/home'
+  get 'static_controller/contact'
+get 'static_controller/about'
   get 'static_controller/help'
+  post 'static_controller/help'
 
   get 'static_pages/home'
+  get 'static_pages/about'
 
   get 'static_pages/about'
 
@@ -61,5 +65,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'application#Welcome'
+  #root 'application#Welcome'
+  root 'static_controller#home'
 end
