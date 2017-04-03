@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/new'
 
-  get 'static_controller/home'
-  get 'static_controller/contact'
-get 'static_controller/about'
-  get 'static_controller/help'
-  post 'static_controller/help'
-
-  get 'static_pages/home'
-  get 'static_pages/about'
-
-  get 'static_pages/about'
+  get 'static_controller/home', to:'static_controller#home'
+  get 'static_controller/about', to:'static_controller#about'
+  get '/help', to:'static_controller#help'
+  post '/help', to:'static_controller#help'
+  get '/contact', to: 'static_controller#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -65,6 +61,5 @@ get 'static_controller/about'
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  #root 'application#Welcome'
-  root 'static_controller#home'
+  root 'application#Welcome'
 end
